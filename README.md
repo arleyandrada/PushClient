@@ -1,2 +1,2 @@
 # PushClient
-Titanium PushClient Module Documentation and Samples
+Titanium PushClient Module Documentation and Examples
