@@ -1,0 +1,17 @@
+{
+	"global": {
+		"Instructions" : "!!! do not change the ParseGCMSenderId config !!!",
+		"ParseGCMSenderId": "1076345567071",
+		"ParseRESTApiBaseUri": "https://api.parse.com/1/",
+		"ParseApplicationId": "oUoJqlnKz2LvWtk8IoRedZ1XUqqZ3Ivx6ZrbxhOs",
+		"ParseRESTApiKey": "A1k9ZrtgTR1OrAekm2bCn0XPN2IW1VMQwJGdZmbO"
+	}, 
+	"env:development": {}, 
+	"env:test": {}, 
+	"env:production": {}, 
+	"os:android": {},
+	"os:blackberry": {},
+	"os:ios": {},
+	"os:mobileweb": {},
+	"dependencies": {}
+}

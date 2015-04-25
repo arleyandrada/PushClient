@@ -1,0 +1,15 @@
+".container": {
+	backgroundColor:"white",
+	exitOnClose:true
+},
+"#btnRegister": {
+	top: 50
+},
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+},
+"#btnUnregister": {
+	bottom: 50
+}

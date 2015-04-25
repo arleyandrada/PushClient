@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<Button id="btnRegister" title="Register" onClick="register"></Button>
+		<Label id="label">Parse Push Notification</Label>
+		<Button id="btnUnregister" title="Unregister" onClick="unregister"></Button>
+	</Window>
+</Alloy>
