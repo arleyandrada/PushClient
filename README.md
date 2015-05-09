@@ -6,6 +6,8 @@ PushClient is a [Titanium](https://www.appcelerator.com/titanium/) Module that b
 
 This repository contains a simple Titanium Mobile project with an usage sample of the PushClient module
 
+### FAQ and Issues
+
 [Click here](https://github.com/arleyandrada/PushClient/issues?q=&utf8=) to get more info.
 
 ### Download
