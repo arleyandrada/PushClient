@@ -2,6 +2,8 @@
 
 PushClient is a [Titanium](https://www.appcelerator.com/titanium/) Module that brings [Push Notification](http://en.wikipedia.org/wiki/Push_technology) capabilities to your iOS ([APNs](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)) and Android ([GCM](https://developer.android.com/google/gcm/index.html)) apps.
 
+![Push Client](https://d3bql97l1ytoxn.cloudfront.net/app_resources/10355/overview/img5063508865779928927.png)
+
 ### Sample & Documentation
 
 This repository contains a simple Titanium Mobile project with an usage sample of the PushClient module
