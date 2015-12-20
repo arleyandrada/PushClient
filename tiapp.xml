@@ -1,76 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
-  xmlns:ti="http://ti.appcelerator.org">
-  <id>br.com.arlsoft.parsepushclienttest</id>
-  <name>ParsePushClientTest</name>
-  <version>1.0</version>
-  <publisher>arleyandrada</publisher>
-  <url>http://www.arlsoft.com.br</url>
-  <description>Parse Push Notification Example</description>
-  <copyright>2014 by arleyandrada</copyright>
-  <icon>appicon.png</icon>
-  <fullscreen>false</fullscreen>
-  <navbar-hidden>false</navbar-hidden>
-  <analytics>false</analytics>
-  <guid>b7412f3a-59ee-4a89-9bbb-5a8c713cedf4</guid>
-  <property name="ti.ui.defaultunit" type="string">dp</property>
-  <ios>
-    <plist>
-      <dict>
-        <key>UISupportedInterfaceOrientations~iphone</key>
-        <array>
-          <string>UIInterfaceOrientationPortrait</string>
-        </array>
-        <key>UISupportedInterfaceOrientations~ipad</key>
-        <array>
-          <string>UIInterfaceOrientationPortrait</string>
-          <string>UIInterfaceOrientationPortraitUpsideDown</string>
-          <string>UIInterfaceOrientationLandscapeLeft</string>
-          <string>UIInterfaceOrientationLandscapeRight</string>
-        </array>
-        <key>UIRequiresPersistentWiFi</key>
-        <false/>
-        <key>UIPrerenderedIcon</key>
-        <false/>
-        <key>UIStatusBarHidden</key>
-        <false/>
-        <key>UIStatusBarStyle</key>
-        <string>UIStatusBarStyleDefault</string>
-        <key>UIBackgroundModes</key>
-        <array>
-          <string>remote-notification</string>
-        </array>
-      </dict>
-    </plist>
-  </ios>
-  <android 
-    xmlns:android="http://schemas.android.com/apk/res/android"/>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>br.com.arlsoft.parsepushclienttest</id>
+    <name>ParsePushClientTest</name>
+    <version>1.0</version>
+    <publisher>arleyandrada</publisher>
+    <url>http://www.arlsoft.com.br</url>
+    <description>Parse Push Notification Example</description>
+    <copyright>2014 by arleyandrada</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>false</analytics>
+    <guid>b7412f3a-59ee-4a89-9bbb-5a8c713cedf4</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <ios>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+                <key>UIBackgroundModes</key>
+                <array>
+                    <string>remote-notification</string>
+                </array>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <mobileweb>
-      <precache/>
-      <splash>
-        <enabled>true</enabled>
-        <inline-css-images>true</inline-css-images>
-      </splash>
-      <theme>default</theme>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
     </mobileweb>
     <modules>
-      <module platform="android">br.com.arlsoft.pushclient</module>
-      <module platform="iphone">br.com.arlsoft.pushclient</module>
-      <module platform="iphone">ti.map</module>
-      <module platform="android">ti.map</module>
-      <module platform="commonjs">ti.cloud</module>
+        <module platform="android">br.com.arlsoft.pushclient</module>
+        <module platform="iphone">br.com.arlsoft.pushclient</module>
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="android">facebook</module>
+        <module platform="iphone">facebook</module>
     </modules>
     <deployment-targets>
-      <target device="android">true</target>
-      <target device="blackberry">false</target>
-      <target device="ipad">false</target>
-      <target device="iphone">true</target>
-      <target device="mobileweb">false</target>
-      <target device="tizen">false</target>
+        <target device="android">true</target>
+        <target device="ipad">false</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.5.1.GA</sdk-version>
+    <sdk-version>5.1.1.GA</sdk-version>
     <plugins>
-      <plugin version="1.0">ti.alloy</plugin>
+        <plugin version="1.0">ti.alloy</plugin>
     </plugins>
     <property name="appc-app-id" type="string">55cffb75ea9eaeb2595cdb25</property>
     <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
@@ -89,4 +87,4 @@
     <property name="acs-password-production" type="string">BxQnVQIwdip0Iwms2a</property>
     <property name="appc-org-id" type="string">100006052</property>
     <property name="appc-creator-user-id" type="string">7344948d-906a-4cbf-b887-a7397bf591a8</property>
-  </ti:app>
+</ti:app>
