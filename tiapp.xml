@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>false</analytics>
-    <guid>b7412f3a-59ee-4a89-9bbb-5a8c713cedf4</guid>
+    <guid>50e6921c-5fae-4f90-9000-5a8c713cedf4</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -70,7 +70,7 @@
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
-    <property name="appc-app-id" type="string">55cffb75ea9eaeb2595cdb25</property>
+    <property name="appc-app-id" type="string">5678b95e2866e9f1261cec30</property>
     <property name="acs-authbase-url-development" type="string">https://secure-identity.cloud.appcelerator.com</property>
     <property name="acs-base-url-development" type="string">https://api.cloud.appcelerator.com</property>
     <property name="acs-oauth-secret-development" type="string">Z9XavT4VOAwrsV93tNyce1gVTUTil6Hb</property>
