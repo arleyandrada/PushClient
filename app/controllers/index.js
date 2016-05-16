@@ -30,10 +30,12 @@ if (!OS_ANDROID) {
 }
 
 var PushClient = require('br.com.arlsoft.pushclient');
-var Parse = require('parse');
+//var Provider = require('parse');
+var Provider = require('amazonsns');
 
 var registerOptions = {
-	GCMSenderId : Alloy.CFG.ParseGCMSenderId,
+	//GCMSenderId : Alloy.CFG.ParseGCMSenderId,
+	GCMSenderId : Alloy.CFG.AmazonSNSGCMSenderId,
 	APNTypes : [ PushClient.NOTIFICATION_TYPE_BADGE, PushClient.NOTIFICATION_TYPE_ALERT, PushClient.NOTIFICATION_TYPE_SOUND ]
 };
 
@@ -84,6 +86,9 @@ if (OS_IOS) {
 // "smallIcon" (String) set small icon to Android notification from assets
 // "largeIcon" (String) set large icon to Android notification from local file or url
 // "category" (String) to iOS 8 interactive notification
+// "ledARGB" (Color) to change default Android device light color
+// "ledOnMS" (Int) to change default Android device light blink on time
+// "ledOffMS" (Int) to change default Android device light blink off time
 
 var eventSuccess = function(event) {
 	Ti.API.info('eventSuccess:' + JSON.stringify(event));
@@ -96,11 +101,11 @@ var eventSuccess = function(event) {
 
 	alert('Success:\n\nregistrationId\n\n' + event.registrationId);
 
-	Parse.registerDevice(event.registrationId, [], function(error, response) {
+	Provider.registerDevice(event.registrationId, [], function(error, response) {
 		if (error) {
-			alert('Parse API Error:\n\n' + JSON.stringify(response));
+			alert('Provider API Error:\n\n' + JSON.stringify(response));
 		} else {
-			alert('Parse API Success:\n\n' + JSON.stringify(response));
+			alert('Provider API Success:\n\n' + JSON.stringify(response));
 		}
 	});
 };

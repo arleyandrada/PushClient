@@ -1,8 +1,8 @@
-#appname:ParsePushClientTest
+#appname:PushClientTest
 #publisher:arleyandrada
 #url:http://www.arlsoft.com.br
 #image:appicon.png
 #appid:br.com.arlsoft.parsepushclienttest
-#desc:Parse Push Notification Example
+#desc:Push Notification Example
 #type:mobile
 #guid:be19eb2f-7cb2-40a0-853c-90b19e02744d

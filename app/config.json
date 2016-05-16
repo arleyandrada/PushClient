@@ -4,7 +4,23 @@
 		"ParseGCMSenderId": "1076345567071",
 		"ParseRESTApiBaseUri": "https://api.parse.com/1/",
 		"ParseApplicationId": "oUoJqlnKz2LvWtk8IoRedZ1XUqqZ3Ivx6ZrbxhOs",
-		"ParseRESTApiKey": "A1k9ZrtgTR1OrAekm2bCn0XPN2IW1VMQwJGdZmbO"
+		"ParseRESTApiKey": "A1k9ZrtgTR1OrAekm2bCn0XPN2IW1VMQwJGdZmbO",
+
+		"AmazonInstructions": [
+			"https://developers.google.com/cloud-messaging/gcm",
+			"http://www.connecto.io/kb/knwbase/getting-gcm-sender-id-and-gcm-api-key/",
+			"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html",
+			"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"
+			],
+		"AmazonSNSGCMSenderId": "change-to-your-gcm-sender-id",
+		"AmazonAccessKey": "change-to-your-aws-access-key",
+		"AmazonSecretKey": "change-to-your-aws-secret-key",
+		"AmazonAndroidARN": "arn:aws:sns:us-west-2:886168276114:app/GCM/PushClientAndroid",
+		"AmazonIOSARN": "arn:aws:sns:us-west-2:886168276114:app/APNS/PushClientIOS",
+		"AmazonSNSRegion": "us-west-2",
+		"AmazonSNSAllTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest",
+		"AmazonSNSiOSTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-iOS",
+		"AmazonSNSAndroidTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-Android"
 	}, 
 	"env:development": {}, 
 	"env:test": {}, 

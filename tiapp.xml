@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>br.com.arlsoft.parsepushclienttest</id>
-    <name>ParsePushClientTest</name>
+    <name>PushClientTest</name>
     <version>1.0</version>
     <publisher>arleyandrada</publisher>
     <url>http://www.arlsoft.com.br</url>
-    <description>Parse Push Notification Example</description>
+    <description>Push Notification Example</description>
     <copyright>2014 by arleyandrada</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
@@ -54,11 +54,11 @@
     <modules>
         <module platform="android">br.com.arlsoft.pushclient</module>
         <module platform="iphone">br.com.arlsoft.pushclient</module>
-        <module platform="iphone">ti.map</module>
-        <module platform="android">ti.map</module>
         <module platform="commonjs">ti.cloud</module>
         <module platform="android">facebook</module>
         <module platform="iphone">facebook</module>
+        <module platform="iphone">ti.map</module>
+        <module platform="android">ti.map</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -66,7 +66,7 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>5.1.1.GA</sdk-version>
+    <sdk-version>5.2.2.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

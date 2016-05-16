@@ -41,6 +41,7 @@ Build your own server with any language, platform, with any available open sourc
 **Universal**
 
 Easily connect to [Parse](https://www.parse.com) Push Notification with sample.
+Easily connect to [Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html) Push Notification with sample.
 
 **Changelog**
 

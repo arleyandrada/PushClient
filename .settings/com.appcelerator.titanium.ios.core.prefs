@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+iosLaunchConfigurationAttributes/ATTR_MINIFY=true
+iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=PushClient
+iosLaunchConfigurationAttributes/ATTR_UPLOAD_DEBUG_SYMBOLS=false
+iosLaunchConfigurationAttributes/appid=br.com.arlsoft.parsepushclienttest
+iosLaunchConfigurationAttributes/certificate=Arley Maria (6R8UAF9VRF)
+iosLaunchConfigurationAttributes/keychain=
+iosLaunchConfigurationAttributes/sdk_version=9.3
+iosLaunchConfigurationAttributes/uuid=14b522c3-dd62-4fda-b9c4-0f6a194540ce
