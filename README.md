@@ -24,7 +24,7 @@ No advanced knowledge required; Just start and listen to events.
 
 **Powerfull**
 
-Compatible from Titanium SDK 3.2.1 to latest version, including iOS 7 remote notifications and iOS 8 interactive notifications.
+Compatible from Titanium SDK latest version, including iOS 7 remote notifications and iOS 8 interactive notifications.
 
 **Cross platform and Clear Code**
 
@@ -40,10 +40,41 @@ Build your own server with any language, platform, with any available open sourc
 
 **Universal**
 
-Easily connect to [Parse](https://www.parse.com) Push Notification with sample.
 Easily connect to [Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html) Push Notification with sample.
+Easily connect to [Parse](https://www.parse.com) Push Notification with sample.
 
 **Changelog**
+
+Version 1.13:
+
+- Sample integration to Amazon SNS provider;
+- Fixed Android backward compatibility to SDK 4.1.0.GA;
+- Fixed iOS backward compatibility to SDK 5.0.0.GA;
+
+Version 1.12:
+
+- Fix to sound attribute error;
+
+Version 1.11:
+
+- Google Play Services update;
+- Titanium SDK compatibility update;
+- Ti.map compatibility update;
+- Ti.cloud compatibility update;
+- Facebook compatibility update;
+- Ignore file extension to sound attribute (uniformized payload);
+
+Version 1.10:
+
+- Fix to android custom sounds;
+
+Version 1.9:
+
+- Fix to "non-ordered broadcast" error;
+
+Version 1.8:
+
+- Show local notification option;
 
 Version 1.7:
 
