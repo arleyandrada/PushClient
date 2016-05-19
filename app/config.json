@@ -21,6 +21,12 @@
 		"AmazonSNSAllTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest",
 		"AmazonSNSiOSTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-iOS",
 		"AmazonSNSAndroidTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-Android"
+
+		"OneSignalInstructions" : "!!! Change the values and you are good to go !!!",
+		"OneSignalGCMSenderId": "put-here-your-google-gcmsenderid",
+		"OneSignalRESTApiBaseUri": "https://onesignal.com/api/v1/",
+		"OneSignalApplicationId": "put-here-your-onesignal-application-id",
+		"OnesignalRESTApiKey": "put-here-your-onesignal-rest-api-key"
 	}, 
 	"env:development": {}, 
 	"env:test": {}, 
