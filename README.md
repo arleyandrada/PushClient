@@ -40,10 +40,18 @@ Build your own server with any language, platform, with any available open sourc
 
 **Universal**
 
-Easily connect to [Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html) Push Notification with sample.
-Easily connect to [Parse](https://www.parse.com) Push Notification with sample.
+Easily connect to [Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html) push notification provider with sample.
+Easily connect to [OneSignal](https://onesignal.com) push notification provider with sample.
+Easily connect to [Parse](https://www.parse.com) push notification provider with sample.
 
 **Changelog**
+
+Version 1.14:
+
+- Better OneSignal compatibility;
+- Sample integration to OneSignal provider;
+- New Android attribute to set the icon background color;
+- New Android attribute to set the notification visibility;
 
 Version 1.13:
 
