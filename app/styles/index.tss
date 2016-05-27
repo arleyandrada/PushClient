@@ -5,6 +5,9 @@
 "#btnRegister": {
 	top: 50
 },
+"#btnSend": {
+	top: 100
+},
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,

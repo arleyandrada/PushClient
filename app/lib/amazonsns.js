@@ -84,7 +84,7 @@ var registerDevice = function(registrationId, channels, cb) {
 		channels.push(platformTopicARN);
 	
 	//Check previous Amazon SNS endpoint...
-	var endpointArn = Ti.App.Properties.getString('AmazonSNS:endpointArn', '');
+	var endpointArn = Ti.App.Properties.getString(applicationARN, '');
 	if (endpointArn == '') {
 
 		//Create new endpoint
@@ -193,7 +193,7 @@ var createPlatformEndpoint = function(applicationARN, registrationId, channels, 
 		
 		//Save current endpoint...
 		var endpointArn = data.CreatePlatformEndpointResult.EndpointArn;
-		Ti.App.Properties.setString('AmazonSNS:endpointArn', endpointArn);
+		Ti.App.Properties.setString(applicationARN, endpointArn);
 		
 		//Force topic subscriptions...
 		subscribeTopics(endpointArn, channels, cb);

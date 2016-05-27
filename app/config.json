@@ -1,12 +1,13 @@
 {
 	"global": {
-		"Instructions" : "!!! do not change the ParseGCMSenderId config !!!",
-		"ParseGCMSenderId": "1076345567071",
+		"ParseInstructions" : "!!! Change the values and you are good to go !!!",
+		"ParseGCMSenderId": "put-here-your-google-gcmsenderid",
 		"ParseRESTApiBaseUri": "https://api.parse.com/1/",
-		"ParseApplicationId": "oUoJqlnKz2LvWtk8IoRedZ1XUqqZ3Ivx6ZrbxhOs",
-		"ParseRESTApiKey": "A1k9ZrtgTR1OrAekm2bCn0XPN2IW1VMQwJGdZmbO",
+		"ParseApplicationId": "put-here-your-parse-application-id",
+		"ParseRESTApiKey": "put-here-your-parse-rest-api-key",
 
 		"AmazonInstructions": [
+			"!!! Change the values and you are good to go !!!",
 			"https://developers.google.com/cloud-messaging/gcm",
 			"http://www.connecto.io/kb/knwbase/getting-gcm-sender-id-and-gcm-api-key/",
 			"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html",
@@ -15,12 +16,12 @@
 		"AmazonSNSGCMSenderId": "change-to-your-gcm-sender-id",
 		"AmazonAccessKey": "change-to-your-aws-access-key",
 		"AmazonSecretKey": "change-to-your-aws-secret-key",
-		"AmazonAndroidARN": "arn:aws:sns:us-west-2:886168276114:app/GCM/PushClientAndroid",
-		"AmazonIOSARN": "arn:aws:sns:us-west-2:886168276114:app/APNS/PushClientIOS",
 		"AmazonSNSRegion": "us-west-2",
+		"AmazonAndroidARN": "arn:aws:sns:us-west-2:886168276114:app/GCM/PushClientAndroid",
+		"AmazonIOSARN": "arn:aws:sns:us-west-2:886168276114:app/APNS_SANDBOX/PushClientIOS",
 		"AmazonSNSAllTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest",
 		"AmazonSNSiOSTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-iOS",
-		"AmazonSNSAndroidTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-Android"
+		"AmazonSNSAndroidTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-Android",
 
 		"OneSignalInstructions" : "!!! Change the values and you are good to go !!!",
 		"OneSignalGCMSenderId": "put-here-your-google-gcmsenderid",

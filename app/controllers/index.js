@@ -31,11 +31,13 @@ if (!OS_ANDROID) {
 
 var PushClient = require('br.com.arlsoft.pushclient');
 //var Provider = require('parse');
-var Provider = require('amazonsns');
+//var Provider = require('amazonsns');
+var Provider = require('onesignal');
 
 var registerOptions = {
 	//GCMSenderId : Alloy.CFG.ParseGCMSenderId,
-	GCMSenderId : Alloy.CFG.AmazonSNSGCMSenderId,
+	//GCMSenderId : Alloy.CFG.AmazonSNSGCMSenderId,
+	GCMSenderId : Alloy.CFG.OneSignalGCMSenderId,
 	APNTypes : [ PushClient.NOTIFICATION_TYPE_BADGE, PushClient.NOTIFICATION_TYPE_ALERT, PushClient.NOTIFICATION_TYPE_SOUND ]
 };
 
@@ -166,6 +168,16 @@ var eventCallback = function(event) {
 	} else if (event.mode == PushClient.MODE_CLICK) {
 		alert('Callback from Click:\n\n' + JSON.stringify(event.data));
 		// Push data received when user clicks in notification message
+		if (Provider.confirmPushOpened && event.data && event.data.custom && event.data.custom.i) {
+			//Confirm click to OneSignal API
+			Provider.confirmPushOpened(event.data.custom.i, function(error, response) {
+				if (error) {
+					Ti.API.info('Provider API Track Error:\n\n' + JSON.stringify(response));
+				} else {
+					Ti.API.info('Provider API Track Success:\n\n' + JSON.stringify(response));
+				}
+			});
+		}
 	} else if (event.mode == PushClient.MODE_BACKGROUND) {
 		// Requires set remote-notification UIBackgroundModes in tiapp.xml
 		PushClient.endBackgroundHandler(event.data.handlerId);
@@ -188,6 +200,43 @@ PushClient.addEventListener(PushClient.EVENT_CALLBACK, eventCallback);
 function register(e){
 	Ti.API.info('registerPush...');
 	PushClient.registerPush(registerOptions);
+}
+
+if (!Provider.sendMessage) {
+	$.btnSend.visible = false;
+}
+
+function send(e){
+	if ($.btnSend.title != 'Send Hello World!') {
+		return;
+	}
+
+	Ti.API.info('sending message...');
+
+	Provider.sendMessage('Hello World!', 5, function(error, response) {
+		if (error) {
+			Ti.API.info('Provider API Send Error:\n\n' + JSON.stringify(response));
+		} else {
+			Ti.API.info('Provider API Send Success:\n\n' + JSON.stringify(response));
+		}
+	});
+
+	$.btnSend.title = 'Sending in 5s...';
+
+	var counter = 4;
+    var countDown = setInterval(function () {
+    	if (counter < 0) {
+			$.btnSend.title = 'Send Hello World!';
+    		clearInterval(countDown);
+    		return;
+    	}
+    	$.btnSend.title = 'Sending in '+counter+'s...';
+        counter--;
+    }, 1000);
+    setTimeout(function(){
+		$.btnSend.title = 'Send Hello World!';
+		clearInterval(countDown);
+    }, 5000);
 }
 
 function unregister(e){

@@ -1,6 +1,7 @@
 <Alloy>
 	<Window class="container">
 		<Button id="btnRegister" title="Register" onClick="register"></Button>
+		<Button id="btnSend" title="Send Hello World!" onClick="send"></Button>
 		<Label id="label">Push Notification Example</Label>
 		<Button id="btnUnregister" title="Unregister" onClick="unregister"></Button>
 	</Window>
