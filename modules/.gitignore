@@ -2,7 +2,6 @@ tmp
 dist/
 bin/
 build/
-Resources/
 build.log
 *.zip
 .apt_generated
