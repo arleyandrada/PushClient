@@ -1,3 +1,9 @@
+```
+***************************
+  FREE and OPEN SOURCE!!!
+***************************
+```
+
 # PushClient
 
 PushClient is a [Titanium](https://www.appcelerator.com/titanium/) Module that brings [Push Notification](http://en.wikipedia.org/wiki/Push_technology) capabilities to your iOS ([APNs](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)) and Android ([GCM](https://developer.android.com/google/gcm/index.html)) apps.
@@ -45,6 +51,10 @@ Easily connect to [OneSignal](https://onesignal.com) push notification provider 
 Easily connect to [Parse](https://www.parse.com) push notification provider with sample.
 
 **Changelog**
+
+Version 1.15:
+
+- Free and Open Source!!!!
 
 Version 1.14:
 
