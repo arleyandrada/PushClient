@@ -1,0 +1,14 @@
+tmp
+dist/
+bin/
+build/
+Resources/
+.settings/
+build.log
+*.zip
+.apt_generated
+.DS_Store
+npm-debug.log
+.map
+Thumbs.db
+*.xcuserstate

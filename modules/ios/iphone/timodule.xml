@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:module xmlns:ti="http://ti.appcelerator.org" xmlns:android="http://schemas.android.com/apk/res/android">
+	<!--
+	Similar to tiapp.xml, but contains module/platform specific
+	configuration in <iphone>, <android>, and <mobileweb> sections
+	-->
+	<android xmlns:android="http://schemas.android.com/apk/res/android">
+	</android>
+	<mobileweb>
+	</mobileweb>
+	<iphone>
+		<plist>
+			<dict>
+				<key>UIBackgroundModes</key>
+				<array>
+					<string>remote-notification</string>
+				</array>
+			</dict>
+		</plist>
+	</iphone>
+</ti:module>

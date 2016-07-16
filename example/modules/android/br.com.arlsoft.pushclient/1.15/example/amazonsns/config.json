@@ -1,0 +1,28 @@
+{
+	"global": {
+		"AmazonInstructions": [
+			"!!! Change the values and you are good to go !!!",
+			"https://developers.google.com/cloud-messaging/gcm",
+			"http://www.connecto.io/kb/knwbase/getting-gcm-sender-id-and-gcm-api-key/",
+			"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html",
+			"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html"
+			],
+		"AmazonSNSGCMSenderId": "change-to-your-gcm-sender-id",
+		"AmazonAccessKey": "change-to-your-aws-access-key",
+		"AmazonSecretKey": "change-to-your-aws-secret-key",
+		"AmazonSNSRegion": "us-west-2",
+		"AmazonAndroidARN": "arn:aws:sns:us-west-2:886168276114:app/GCM/PushClientAndroid",
+		"AmazonIOSARN": "arn:aws:sns:us-west-2:886168276114:app/APNS/PushClientIOS",
+		"AmazonSNSAllTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest",
+		"AmazonSNSiOSTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-iOS",
+		"AmazonSNSAndroidTopicARN": "arn:aws:sns:us-west-2:886168276114:PushClientTest-Android"
+	}, 
+	"env:development": {}, 
+	"env:test": {}, 
+	"env:production": {}, 
+	"os:android": {},
+	"os:blackberry": {},
+	"os:ios": {},
+	"os:mobileweb": {},
+	"dependencies": {}
+}

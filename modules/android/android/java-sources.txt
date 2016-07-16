@@ -1,0 +1,7 @@
+"/GitHub/PushClient/modules/android/android/build/generated/java/br/com/arlsoft/pushclient/PushClientBootstrap.java"
+"/GitHub/PushClient/modules/android/android/src/android/UnusedStub.java"
+"/GitHub/PushClient/modules/android/android/src/br/com/arlsoft/pushclient/GCMBroadcastReceiver.java"
+"/GitHub/PushClient/modules/android/android/src/br/com/arlsoft/pushclient/GCMIntentService.java"
+"/GitHub/PushClient/modules/android/android/src/br/com/arlsoft/pushclient/PendingNotificationActivity.java"
+"/GitHub/PushClient/modules/android/android/src/br/com/arlsoft/pushclient/PushClientModule.java"
+"/GitHub/PushClient/modules/android/android/src/br/com/arlsoft/pushclient/Utils.java"

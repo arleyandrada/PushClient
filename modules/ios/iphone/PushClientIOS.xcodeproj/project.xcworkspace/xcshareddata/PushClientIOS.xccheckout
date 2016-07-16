@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>81D5A50A-2CCC-435C-B4AC-204DE443C1CC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PushClientIOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D885F72F0C0CDF745A8112657D405682F506D5FD</key>
+		<string>https://github.com/arleyandrada/PushClient.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PushClientIOS/PushClientIOS.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D885F72F0C0CDF745A8112657D405682F506D5FD</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/arleyandrada/PushClient.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D885F72F0C0CDF745A8112657D405682F506D5FD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D885F72F0C0CDF745A8112657D405682F506D5FD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PushClient</string>
+		</dict>
+	</array>
+</dict>
+</plist>

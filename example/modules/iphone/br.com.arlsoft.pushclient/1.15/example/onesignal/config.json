@@ -1,0 +1,17 @@
+{
+	"global": {
+		"OneSignalInstructions" : "!!! Change the values and you are good to go !!!",
+		"OneSignalGCMSenderId": "put-here-your-google-gcmsenderid",
+		"OneSignalRESTApiBaseUri": "https://onesignal.com/api/v1/",
+		"OneSignalApplicationId": "put-here-your-onesignal-application-id",
+		"OnesignalRESTApiKey": "put-here-your-onesignal-rest-api-key"
+	}, 
+	"env:development": {}, 
+	"env:test": {}, 
+	"env:production": {}, 
+	"os:android": {},
+	"os:blackberry": {},
+	"os:ios": {},
+	"os:mobileweb": {},
+	"dependencies": {}
+}
