@@ -168,9 +168,9 @@ var eventCallback = function(event) {
 	} else if (event.mode == PushClient.MODE_CLICK) {
 		alert('Callback from Click:\n\n' + JSON.stringify(event.data));
 		// Push data received when user clicks in notification message
-		if (Provider.confirmPushOpened && event.data && event.data.custom && event.data.custom.i) {
+		if (Provider.confirmPushOpened && event.data && event.data.custom && JSON.parse(event.data.custom).i) {
 			//Confirm click to OneSignal API
-			Provider.confirmPushOpened(event.data.custom.i, function(error, response) {
+			Provider.confirmPushOpened(JSON.parse(event.data.custom).i, function(error, response) {
 				if (error) {
 					Ti.API.info('Provider API Track Error:\n\n' + JSON.stringify(response));
 				} else {
