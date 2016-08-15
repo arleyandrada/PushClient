@@ -537,6 +537,30 @@ public class PushClientModule extends KrollModule {
 					notificationText = text;
 				}
 			}
+		} else if (extras.containsKey("payload")) {
+			try {
+				JSONObject reader = new JSONObject(extras.getString("payload"));
+				Bundle newExtras = new Bundle();
+				for (int i = 0; i < reader.names().length(); i++) {
+					String key = reader.names().getString(i);
+					newExtras.putString(key, reader.getString(key));
+				}
+				if (newExtras.containsKey("text")) {
+					notificationText = newExtras.getString("text");
+					extras = newExtras;
+				} else if (newExtras.containsKey("alert")) {
+					notificationText = newExtras.getString("alert");
+					extras = newExtras;
+				} else if (newExtras.containsKey("message")) {
+					notificationText = newExtras.getString("message");
+					extras = newExtras;
+				}
+			} catch (JSONException e) {
+				String text = extras.getString("default");
+				if (text != null) {
+					notificationText = text;
+				}
+			}
 		}
 
 		// TITLE
