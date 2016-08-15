@@ -556,7 +556,7 @@ public class PushClientModule extends KrollModule {
 					extras = newExtras;
 				}
 			} catch (JSONException e) {
-				String text = extras.getString("default");
+				String text = extras.getString("payload");
 				if (text != null) {
 					notificationText = text;
 				}
