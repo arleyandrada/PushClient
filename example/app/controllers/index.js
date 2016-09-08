@@ -158,38 +158,60 @@ var eventCallback = function(event) {
 	if (!event) {
 		alert('Callback:\n\nInvalid callback');
 		// Should never happen...
-	} else if (event.mode == PushClient.MODE_FOREGROUND) {
-		if (OS_ANDROID) {
-			PushClient.showLocalNotification(event.data);
-			// Force to show local notification
-		}
-		alert('Callback in Foreground:\n\n' + JSON.stringify(event.data));
-		// Push data received with app in foreground
-	} else if (event.mode == PushClient.MODE_CLICK) {
-		alert('Callback from Click:\n\n' + JSON.stringify(event.data));
-		// Push data received when user clicks in notification message
-		if (Provider.confirmPushOpened && event.data && event.data.custom && JSON.parse(event.data.custom).i) {
-			//Confirm click to OneSignal API
-			Provider.confirmPushOpened(JSON.parse(event.data.custom).i, function(error, response) {
-				if (error) {
-					Ti.API.info('Provider API Track Error:\n\n' + JSON.stringify(response));
-				} else {
-					Ti.API.info('Provider API Track Success:\n\n' + JSON.stringify(response));
-				}
-			});
-		}
-	} else if (event.mode == PushClient.MODE_BACKGROUND) {
-		// Requires set remote-notification UIBackgroundModes in tiapp.xml
-		PushClient.endBackgroundHandler(event.data.handlerId);
-		// Put the application back to sleep before any UI interations
-		alert('Callback from Silent:\n\n' + JSON.stringify(event.data));
-		// Push data received with app in background
-	} else if (event.mode == PushClient.MODE_ACTION) {
-		alert('Callback from Action:\n\n'+event.category+'\n'+event.identifier+'\n\n' + JSON.stringify(event.data));
-		// Push data received when user choose an action from notification message
 	} else {
-		alert('Callback:\n\n' + JSON.stringify(event.data));
-		// Should never happen...
+		switch (event.mode) {
+			case PushClient.MODE_FOREGROUND: // case for handling foreground in android
+			case 1: // ios modeclick case tested for onesignal as it returns numbers
+			// Push data received with app in foreground
+			if (OS_ANDROID) {
+				PushClient.showLocalNotification(event.data);
+			}
+			alert('Callback in Foreground:\n\n' + (JSON.stringify(JSON.parse(event.data.custom).a)));
+			break;
+			case PushClient.MODE_CLICK: // android mode click case
+			case 2: // ios modeclick case tested for onesignal
+				alert('Callback from Click:\n\n' + (OS_ANDROID) ? (JSON.stringify(JSON.parse(event.data.custom).a)) : JSON.stringify(event.data.custom.a));
+				if(OS_ANDROID){
+					// android has default event.data.custom as an string format
+					if (Provider.confirmPushOpened && event.data && event.data.custom && JSON.parse(event.data.custom).i) {
+						Provider.confirmPushOpened(JSON.parse(event.data.custom).i, function(error, response) {
+							if (error) {
+								Ti.API.info('Provider API Track Error:\n\n' + JSON.stringify(response));
+							} else {
+								Ti.API.info('Provider API Track Success:\n\n' + JSON.stringify(response));
+							}
+						});
+					}
+				} else{
+					// the ios has default event.data.custom as an object format
+					if (Provider.confirmPushOpened && event.data && event.data.custom && event.data.custom.i) {
+						Provider.confirmPushOpened(event.data.custom.i, function(error, response) {
+							if (error) {
+								Ti.API.info('Provider API Track Error:\n\n' + JSON.stringify(response));
+							} else {
+								Ti.API.info('Provider API Track Success:\n\n' + JSON.stringify(response));
+							}
+						});
+					}
+				}
+				break;
+			case PushClient.MODE_BACKGROUND:
+			case 3: // ios modeclick case tested for onesignal
+				// Requires set remote-notification UIBackgroundModes in tiapp.xml
+				PushClient.endBackgroundHandler(event.data.handlerId);
+				// Put the application back to sleep before any UI interations
+				alert('Callback from Silent:\n\n' + JSON.stringify(event.data));
+				// Push data received with app in background
+				break;
+			case PushClient.MODE_ACTION:
+			case 4: // ios modeclick case tested for onesignal
+				alert('Callback from Action:\n\n'+event.category+'\n'+event.identifier+'\n\n' + JSON.stringify(event.data));
+				// Push data received when user choose an action from notification message
+				break;
+			default:
+				alert('Callback:\n\n' + JSON.stringify(event.data));
+				// Should never happen...
+		}
 	}
 };
 
