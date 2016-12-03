@@ -52,6 +52,10 @@ Easily connect to [Parse](https://www.parse.com) push notification provider with
 
 **Changelog**
 
+Version 1.20:
+
+- Titanium SDK 6.0.0 compatibility
+
 Version 1.15:
 
 - Free and Open Source!!!!

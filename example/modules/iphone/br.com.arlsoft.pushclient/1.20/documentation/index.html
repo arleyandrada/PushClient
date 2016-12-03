@@ -1,0 +1,129 @@
+<h1>PushClient Module</h1>
+<h2>Description</h2>
+<p>Simple and powerfull Titanium module to deal with push notifications.</p>
+<p>There is no dependency with any push notification provider, but can be easily integrated with virtually any provider, including your own server, using simple JavaScript code.</p>
+<p>Check the integration examples accompanying this documentation, such as: Parse, Amazon SNS and OneSignal.</p>
+<p>Tested by users also for push notification providers such as: Baidu Cloud Push and Kinvey.</p>
+<p>Please contribute: https://github.com/arleyandrada/PushClient</p>
+<h2>Usage (in your app)</h2>
+<pre>
+//Register module...
+var PushClient = require('br.com.arlsoft.pushclient');
+
+//Define registration options...
+var registerOptions = {
+    GCMSenderId : 'put-your-google-cloud-messaging-sender-id-here',
+    APNTypes : [ PushClient.NOTIFICATION_TYPE_BADGE, PushClient.NOTIFICATION_TYPE_ALERT, PushClient.NOTIFICATION_TYPE_SOUND ]
+};
+
+//Define iOS actions and categories...
+if (OS_IOS) {
+    var acceptAction = PushClient.createAction({
+        identifier: 'ACCEPT_IDENTIFIER',
+        title: 'Accept',
+        activationMode: PushClient.NOTIFICATION_ACTIVATION_MODE_FOREGROUND,
+        destructive: false,
+        authenticationRequired: true
+    });
+    var rejectAction = PushClient.createAction({
+        identifier: 'REJECT_IDENTIFIER',
+        title: 'Reject',
+        activationMode: PushClient.NOTIFICATION_ACTIVATION_MODE_BACKGROUND,
+        destructive: true,
+        authenticationRequired: false
+    });
+    var downloadContent = PushClient.createCategory({
+      identifier: 'APPROVE_CONTENT',
+      actionsForMinimalContext: [acceptAction, rejectAction],
+      actionsForDefaultContext: [acceptAction, rejectAction]
+    });
+    registerOptions.Categories = [downloadContent];
+}
+
+//Define success registration callback...
+var eventSuccess = function(event) {
+    alert('Registration Id : ' + event.registrationId);
+};
+
+//Define error callback...
+var eventError = function(event) {
+    switch (event.code) {
+        case PushClient.ERROR_SENDER_ID:
+            alert('Error : Undefined GCMSenderId');
+            break;
+        case PushClient.ERROR_PLAY_SERVICES:
+            alert('Error : Google Play Services not available');
+            break;
+        case PushClient.ERROR_NOT_SUPPORTED:
+            alert('Error : Not supported error');
+            break;
+        case PushClient.ERROR_REGISTER:
+            alert('Error : Unable to register this device');
+            break;
+        case PushClient.ERROR_UNREGISTER:
+            alert('Error : Unable to unregister this device');
+            break;
+        default:
+            alert('Error : Unknown error');
+    }
+};
+
+//Define received notification callback...
+var eventCallback = function(event) {
+    if (event.mode == PushClient.MODE_FOREGROUND) {
+        if (OS_ANDROID) {
+            PushClient.showLocalNotification(event.data);
+        }
+        alert('Callback in Foreground : ' + JSON.stringify(event.data));
+    } else if (event.mode == PushClient.MODE_CLICK) {
+        alert('Callback from Click : ' + JSON.stringify(event.data));
+    } else if (event.mode == PushClient.MODE_BACKGROUND) {
+        PushClient.endBackgroundHandler(event.data.handlerId);
+        alert('Callback from Silent:nn' + JSON.stringify(event.data));
+    } else if (event.mode == PushClient.MODE_ACTION) {
+        alert('Callback from Action:nn'+event.category+'n'+event.identifier+'nn' + JSON.stringify(event.data));
+    }
+};
+    
+//Register each callback listener...
+PushClient.addEventListener(PushClient.EVENT_SUCCESS, eventSuccess);
+PushClient.addEventListener(PushClient.EVENT_ERROR, eventError);
+PushClient.addEventListener(PushClient.EVENT_CALLBACK, eventCallback);
+
+//Request device push registration...
+PushClient.registerPush(registerOptions);
+</pre>
+<h2>Usage (in your push notification provider)</h2>
+<p>Send JSON formated messages like bellow</p>
+<pre>{
+"alert" : "Hello world!",
+"vibrate" : true,
+"largeIcon" : "http://rocketdock.com/images/screenshots/supermario.png"
+}</pre>
+<p>Other options to control the notification behavior...</p>
+<pre>// "alert" (String) to text message - or "text" to Android
+// "sound" (String) to sound file to play - "default" to Android default sound
+// "badge" (Int) to badge count indicator
+// "content-available" (Int) to iOS background notification
+// --&gt;&gt; Requires set remote-notification UIBackgroundModes in tiapp.xml
+// "notificationId" (Int) to Android notification identification
+// "title" (String) to override Android notification title - default app name
+// "ticker" (String) to override Android ticker message - default alert message
+// "vibrate" (Boolean) to use default Android device vibration
+// "lights" (Boolean) to use default Android device lights
+// "smallIcon" or "sicon" (String) set small icon to Android notification from assets
+// "largeIcon" or "licon" (String) set large icon to Android notification from local file or url
+// "category" (String) to iOS 8 interactive notification
+// "ledARGB" or "ledc" (Color) to change default Android device light color
+// "ledOnMS" (Int) to change default Android device light blink on time
+// "ledOffMS" (Int) to change default Android device light blink off time
+// "accentARGB" or "bgac" (Color) to set the Android background color of the notification circle
+// "visibility" or "vis" (Int) to set the Android sphere of visibility of the notification</pre>
+<h2>Author</h2>
+<p>ArlSoft Tecnologia
+contato@arlsoft.com.br</p>
+<h2>License</h2>
+<p>Commercial : Copyright (c) 2014</p>
+<p>All rights reserved.
+This is proprietary software.
+No warranty, explicit or implicit, provided.</p>
