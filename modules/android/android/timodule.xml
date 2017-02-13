@@ -44,7 +44,7 @@
 				<!--
 				Required to define Google Play Services version used
 				-->
-                <meta-data android:name="com.google.android.gms.version" android:value="9683000" />
+                <meta-data android:name="com.google.android.gms.version" android:value="7571000" />
 			</application>
 		</manifest>
 	</android>
