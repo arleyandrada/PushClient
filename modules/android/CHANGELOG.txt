@@ -1,3 +1,6 @@
+Version 1.21:
+- https://github.com/arleyandrada/PushClient/pull/158
+
 Version 1.20:
 - Titanium SDK 6.0.0 compatibility
 
