@@ -729,6 +729,18 @@ public class PushClientModule extends KrollModule {
 				Log.i(TAG, "Unable to find resource identifier to custom smallIcon : " + extrasRoot.getString("sicon"));
 			}
 		}
+		
+		// BIG IMAGE
+		Bitmap bigImage = null;
+		if (extras.containsKey("bigImage")) {
+			bigImage = getBitmap(extras.getString("bigImage"));
+		} else if (extras.containsKey("bicon")) {
+			bigImage = getBitmap(extras.getString("bicon"));
+		} else if (extrasRoot.containsKey("bigImage")) {
+			bigImage = getBitmap(extrasRoot.getString("bigImage"));
+		} else if (extrasRoot.containsKey("bicon")) {
+			bigImage = getBitmap(extrasRoot.getString("bicon"));
+		}
 
 		if (notificationText != null) {
 			// Intent launch = getLauncherIntent(extras);
@@ -742,7 +754,11 @@ public class PushClientModule extends KrollModule {
 			PendingIntent contentIntent = PendingIntent.getActivity(appContext, 0, launch, PendingIntent.FLAG_CANCEL_CURRENT);
 			NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(appContext);
 
-			mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(notificationText));
+			if(bigImage != null){
+				mBuilder.setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bigImage));
+			}else{
+				mBuilder.setStyle(new NotificationCompat.BigTextStyle().bigText(notificationText));
+			}
 			mBuilder.setContentText(notificationText);
 
 			if (notificationTitle != null) {
