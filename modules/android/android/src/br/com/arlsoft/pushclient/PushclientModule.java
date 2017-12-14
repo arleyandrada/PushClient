@@ -1,27 +1,3 @@
-/**
- * MIT License
- * Copyright (c) 2014-present
- * ArlSoft Tecnologia <contato@arlsoft.com.br>
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to
- * deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
- * sell copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- */
-
 package br.com.arlsoft.pushclient;
 
 import java.io.File;
@@ -62,20 +38,20 @@ import android.support.v4.app.NotificationCompat;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-@Kroll.module(name = "PushClient", id = "br.com.arlsoft.pushclient")
-public class PushClientModule extends KrollModule {
-	private static final String TAG = "PushClientModule";
-	private static final String PROPERTY_PREFIX = PushClientModule.class.getName();
-	private static final String ModuleName = "PushClient";
+@Kroll.module(name = "Pushclient", id = "br.com.arlsoft.pushclient")
+public class PushclientModule extends KrollModule {
+	private static final String TAG = "PushclientModule";
+	private static final String PROPERTY_PREFIX = PushclientModule.class.getName();
+	private static final String ModuleName = "Pushclient";
 	private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
 	// Public Events Names
 	@Kroll.constant
-	public static final String EVENT_SUCCESS = "PushClient_Success";
+	public static final String EVENT_SUCCESS = "Pushclient_Success";
 	@Kroll.constant
-	public static final String EVENT_ERROR = "PushClient_Error";
+	public static final String EVENT_ERROR = "Pushclient_Error";
 	@Kroll.constant
-	public static final String EVENT_CALLBACK = "PushClient_Callback";
+	public static final String EVENT_CALLBACK = "Pushclient_Callback";
 
 	// Public Error Codes
 	@Kroll.constant
@@ -129,13 +105,13 @@ public class PushClientModule extends KrollModule {
 	}
 
 	public static boolean hasCallbackListeners() {
-		PushClientModule module = getModule();
+		PushclientModule module = getModule();
 		return (module != null && module.hasListeners(EVENT_CALLBACK));
 	}
 
-	private static PushClientModule getModule() {
+	private static PushclientModule getModule() {
 		TiApplication appContext = TiApplication.getInstance();
-		PushClientModule module = (PushClientModule) appContext.getModuleByName(ModuleName);
+		PushclientModule module = (PushclientModule) appContext.getModuleByName(ModuleName);
 		return module;
 	}
 
@@ -159,7 +135,7 @@ public class PushClientModule extends KrollModule {
 		}
 	}
 
-	public PushClientModule() {
+	public PushclientModule() {
 		super(ModuleName);
 	}
 
@@ -178,7 +154,7 @@ public class PushClientModule extends KrollModule {
 				String value = reader.getString(key);
 				newExtras.putString(key, value);
 			}
-			PushClientModule.sendNotification(newExtras);
+			PushclientModule.sendNotification(newExtras);
 		} catch (JSONException e) {
 		}
 	}
@@ -292,9 +268,9 @@ public class PushClientModule extends KrollModule {
 				Bundle extras = intent.getExtras();
 				if (extras != null && !extras.isEmpty() && extras.containsKey(PROPERTY_EXTRAS)) {
 					extras = extras.getBundle(PROPERTY_EXTRAS);
-					HashMap data = PushClientModule.convertBundleToHashMap(extras);
+					HashMap data = PushclientModule.convertBundleToHashMap(extras);
 					data.put("prev_state", "stopped");
-					PushClientModule.sendMessage(data, PushClientModule.MODE_CLICK);
+					PushclientModule.sendMessage(data, PushclientModule.MODE_CLICK);
 					intent.removeExtra(PROPERTY_EXTRAS);
 				}
 			}
@@ -340,7 +316,7 @@ public class PushClientModule extends KrollModule {
 		// specified
 		// path with the proxy context. This locates a resource relative to the
 		// application resources folder
-		PushClientModule module = getModule();
+		PushclientModule module = getModule();
 		if (module == null)
 			return null;
 
@@ -401,7 +377,7 @@ public class PushClientModule extends KrollModule {
 	}
 
 	public static void sendSuccess(String registrationId) {
-		PushClientModule module = getModule();
+		PushclientModule module = getModule();
 
 		if (module != null && module.hasListeners(EVENT_SUCCESS)) {
 			HashMap data = new HashMap();
@@ -414,7 +390,7 @@ public class PushClientModule extends KrollModule {
 	}
 
 	public static void sendError(int code, String message) {
-		PushClientModule module = getModule();
+		PushclientModule module = getModule();
 
 		if (module != null && module.hasListeners(EVENT_ERROR)) {
 			HashMap data = new HashMap();
@@ -427,7 +403,7 @@ public class PushClientModule extends KrollModule {
 	}
 
 	public static void sendMessage(HashMap messageData, int mode) {
-		PushClientModule module = getModule();
+		PushclientModule module = getModule();
 
 		if (module != null && module.hasListeners(EVENT_CALLBACK)) {
 			HashMap data = new HashMap();

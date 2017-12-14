@@ -2,18 +2,17 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.21
+version: 1.0
 apiversion: 3
-description: Push Client Module
-author: Arley Andrada Maria
-license: Private
-copyright: ArlSoft Tecnologia
-
+architectures: armeabi-v7a x86
+description: pushclient
+author: Your Name
+license: Specify your license
+copyright: Copyright (c) 2017 by Your Company
 
 # these should not be edited
-name: PushClient
+name: pushclient
 moduleid: br.com.arlsoft.pushclient
-guid: 12345678-52ae-4c19-89e5-655a44dd0483
+guid: 11666097-33e3-428f-a005-af158d0df090
 platform: android
-minsdk: 6.0.0.GA
-architectures: armeabi-v7a x86
+minsdk: 6.3.0.GA
