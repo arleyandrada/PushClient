@@ -345,14 +345,14 @@ MAKE_SYSTEM_PROP(NOTIFICATION_ACTIVATION_MODE_BACKGROUND,CONST_NOTIFICATION_ACTI
         NSArray *typesRequested = [args objectForKey:@"APNTypes"];
 
         // Register for push notifications
-        [[TiApp app] setRemoteNotificationDelegate:self];
+        [[TiApp app] registerApplicationDelegate:self];
 
         if ([app respondsToSelector:NSSelectorFromString(@"registerUserNotificationSettings:")])
         {
             Class settings = NSClassFromString(@"UIUserNotificationSettings");
             if (settings) {
                 NSUInteger settingsParam = UIUserNotificationTypeNone;
-                
+
                 if (typesRequested!=nil)
                 {
                     for (id thisTypeRequested in typesRequested)
