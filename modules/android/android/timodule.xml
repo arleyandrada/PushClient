@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:module xmlns:ti="http://ti.appcelerator.org" xmlns:android="http://schemas.android.com/apk/res/android">
-	<android xmlns:android="http://schemas.android.com/apk/res/android">
-		<manifest package="br.com.arlsoft.pushclient" android:versionCode="121" android:versionName="1.21">
-			<!-- GCM requires Android SDK version 2.2 (API level 8) or above. -->
-			<!-- The targetSdkVersion is optional, but it's always a good practice to target higher versions. -->
-			<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
-			<!-- GCM connects to Google Services. -->
-			<uses-permission android:name="android.permission.INTERNET" />
-			<!-- GCM requires a Google account. -->
-			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
-			<!-- Keeps the processor from sleeping when a message is received. -->
-			<uses-permission android:name="android.permission.WAKE_LOCK" />
-			<!--
-			Creates a custom permission so only this app can receive its messages.
-			NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE, where PACKAGE is the application's package name.
-			-->
-			<permission android:name="${tiapp.properties['id']}.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
-			<uses-permission android:name="${tiapp.properties['id']}.permission.C2D_MESSAGE"/>
-			<!-- This app has permission to register and receive data message. -->
-			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest package="br.com.arlsoft.pushclient" android:versionCode="1" android:versionName="1.0">
+            <!-- GCM requires Android SDK version 2.2 (API level 8) or above. -->
+            <!-- The targetSdkVersion is optional, but it's always a good practice to target higher versions. -->
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
+            <!-- GCM connects to Google Services. -->
+            <uses-permission android:name="android.permission.INTERNET" />
+            <!-- GCM requires a Google account. -->
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <!-- Keeps the processor from sleeping when a message is received. -->
+            <uses-permission android:name="android.permission.WAKE_LOCK" />
+            <!--
+            Creates a custom permission so only this app can receive its messages.
+            NOTE: the permission *must* be called PACKAGE.permission.C2D_MESSAGE, where PACKAGE is the application's package name.
+            -->
+            <permission android:name="${tiapp.properties['id']}.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+            <uses-permission android:name="${tiapp.properties['id']}.permission.C2D_MESSAGE"/>
+            <!-- This app has permission to register and receive data message. -->
+            <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-			<!-- Required to use android device vibration -->
-			<uses-permission android:name="android.permission.VIBRATE"/>
+            <!-- Required to use android device vibration -->
+            <uses-permission android:name="android.permission.VIBRATE"/>
 
-			<!-- Main activity. -->
-			<application>
-				<!--
-				WakefulBroadcastReceiver that will receive intents from GCM services and hand them to the custom IntentService.
-				The com.google.android.c2dm.permission.SEND permission is necessary so only GCM services can send data messages for the app.
-				-->
-				<receiver android:name="br.com.arlsoft.pushclient.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
-					<intent-filter>
-						<!-- Receives the actual messages. -->
-						<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-						<category android:name="${tiapp.properties['id']}" />
-					</intent-filter>
-				</receiver>
-				<service android:name="br.com.arlsoft.pushclient.GCMIntentService" />
-				<!--
-				PendingNotificationActivity used to deal with PendingIntent from notification click
-				-->
-				<activity android:name="br.com.arlsoft.pushclient.PendingNotificationActivity" android:launchMode="singleTask" android:taskAffinity="" android:excludeFromRecents="true" />
-				<!--
-				Required to define Google Play Services version used
-				-->
+            <!-- Main activity. -->
+            <application>
+                <!--
+                WakefulBroadcastReceiver that will receive intents from GCM services and hand them to the custom IntentService.
+                The com.google.android.c2dm.permission.SEND permission is necessary so only GCM services can send data messages for the app.
+                -->
+                <receiver android:name="br.com.arlsoft.pushclient.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+                    <intent-filter>
+                        <!-- Receives the actual messages. -->
+                        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                        <category android:name="${tiapp.properties['id']}" />
+                    </intent-filter>
+                </receiver>
+                <service android:name="br.com.arlsoft.pushclient.GCMIntentService" />
+                <!--
+                PendingNotificationActivity used to deal with PendingIntent from notification click
+                -->
+                <activity android:name="br.com.arlsoft.pushclient.PendingNotificationActivity" android:launchMode="singleTask" android:taskAffinity="" android:excludeFromRecents="true" />
+                <!--
+                Required to define Google Play Services version used
+                -->
                 <meta-data android:name="com.google.android.gms.version" android:value="7571000" />
-			</application>
-		</manifest>
-	</android>
+            </application>
+        </manifest>
+    </android>
 </ti:module>
